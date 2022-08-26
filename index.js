@@ -7,8 +7,6 @@ import postRouter from './routes/post-routes.js';
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-
 app.use("/api/post", postRouter);
 
 const MONGO_DB_URI = "mongodb+srv://admin:CZDG5IAQ3VDydMRp@cluster0.qpbs7qx.mongodb.net/Fabrik?retryWrites=true&w=majority"
