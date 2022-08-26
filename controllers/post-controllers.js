@@ -36,7 +36,7 @@ export const postItem = async (req,res,next) => {
             // },
             object:{
                 data: fs.readFileSync("uploads/" + req.file.filename),
-                contentType:"image/png",
+               // contentType:"image/png",
                 contentType:"model/gltf-binary"
             },
             date: date
