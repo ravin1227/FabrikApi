@@ -22,20 +22,23 @@ export const getAllPost = async (req, res, next) =>{
 }
 
 export const postItem = async (req,res,next) => {
-    const {name, title, screenshot, object, } = req.body;
+    const {name, title, object, } = req.body;
 
-    
 
         const date = moment(new Date()).format("DD-MM-YYYY");
 
         const post = new Post({
             name:name,
             title:title,
-            screenshot: {
+            // screenshot: {
+            //     data: fs.readFileSync("uploads/" + req.file.filename),
+            //     contentType:"image/png"
+            // },
+            object:{
                 data: fs.readFileSync("uploads/" + req.file.filename),
-                contentType:"image/png"
+                contentType:"image/png",
+                contentType:"model/gltf-binary"
             },
-            object:object,
             date: date
         });
         try {
@@ -46,8 +49,10 @@ export const postItem = async (req,res,next) => {
         }
     return res.status(200).json({post});
 
-
-    return res.status(200).json({post});
+//     if(req.files){
+//         console.log(req.files)
+//         console.log("file uploaded")
+//     }
 }
 
 export const getById = async (req, res, next) => {
