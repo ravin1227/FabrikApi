@@ -1,6 +1,6 @@
 import express from 'express'
 import { getAllPost, postItem, getById} from '../controllers/post-controllers.js'
-// import upload from '../middleware/multer';
+// import multipleUpload from '../middleware/multer.js';
 import upload from '../middleware/multer.js'
 
 const postRouter = express.Router();
@@ -10,7 +10,7 @@ const postRouter = express.Router();
 postRouter.get("/", getAllPost)
 
 // post post
-postRouter.post("/add",upload.single('screenshot'),postItem)
+postRouter.post("/add",upload.single('object'),postItem)
 
 // get by id
 postRouter.get("/:id",getById)
