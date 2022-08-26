@@ -11,9 +11,9 @@ app.use(cors());
 
 app.use("/api/post", postRouter);
 
-
+const MONGO_DB_URI = "mongodb+srv://admin:CZDG5IAQ3VDydMRp@cluster0.qpbs7qx.mongodb.net/Fabrik?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 3000;
-const URI = process.env.MONGO_DB_URI
+const URI = MONGO_DB_URI
 
 mongoose.connect(URI)
 .then(()=>app.listen(PORT))
