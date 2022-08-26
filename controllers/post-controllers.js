@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Post from "../model/Post";
+import Post from "../model/Post.js";
 import moment from "moment";
 import fs from 'fs'
 

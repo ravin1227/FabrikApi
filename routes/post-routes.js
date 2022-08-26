@@ -1,7 +1,7 @@
 import express from 'express'
-import { getAllPost, postItem, getById} from '../controllers/post-controllers'
+import { getAllPost, postItem, getById} from '../controllers/post-controllers.js'
 // import upload from '../middleware/multer';
-import upload from '../middleware/multer'
+import upload from '../middleware/multer.js'
 
 const postRouter = express.Router();
 
