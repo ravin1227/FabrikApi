@@ -11,13 +11,8 @@ const PostSchema = new Schema({
         type:String,
         required:true
     },
-    // screenshot:{  
-    //     data: Buffer,
-    //     contentType: String,
-    // },
     object:{
-        // type:String,
-        // required: true
+  
         data: Buffer,
         contentType: String,
     },
